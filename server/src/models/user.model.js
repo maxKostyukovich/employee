@@ -11,8 +11,7 @@ const Schema = mongoose.Schema({
     },
     password:{
         type: String,
-        required: true,
-        select: false
+        required: true
     }
 });
 const User = mongoose.model('User',Schema);
