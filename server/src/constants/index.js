@@ -17,3 +17,8 @@ export const HELP_AUTH = {
     Authorization: 'Authorization',
     Bearer: 'Bearer',
 };
+
+export const GENDER = {
+    MALE: 'MALE',
+    FEMALE: 'FEMALE',
+};

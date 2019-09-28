@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 require('../models/user.model');
+require('../models/employee.model');
 import {DB_CONNECTION_STRING} from '../constants';
 mongoose.connect(DB_CONNECTION_STRING, {useNewUrlParser: true,useUnifiedTopology: true},(err) => {
     if(err){
