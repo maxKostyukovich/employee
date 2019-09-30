@@ -4,3 +4,13 @@ export const STORAGE_KEYS = {
 };
 
 export const BEARER = 'Bearer ';
+
+export const GENDER = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE'
+};
+
+export const MODAL_FORM_STATUS_MODE ={
+  ADD: 'ADD',
+  UPDATE: 'UPDATE',
+};

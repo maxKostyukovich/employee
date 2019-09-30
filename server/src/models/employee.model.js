@@ -16,12 +16,7 @@ const Schema = mongoose.Schema({
             required: true,
         },
         contactInformation: {
-            phone:{
-                type: String,
-            },
-            email:{
-                type:String,
-            }
+            type: String
         },
         salary:{
             type:Number,

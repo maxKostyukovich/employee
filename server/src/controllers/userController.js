@@ -16,10 +16,8 @@ module.exports.getUser = async (req, res, next) => {
   try {
       const user = await User.findById(req.payload._id);
       user.password = undefined;
-      console.log(user);
       res.send(user);
   } catch(e){
-      console.log(e);
       next(e);
   }
 };
@@ -31,7 +29,6 @@ module.exports.createUser = async (req, res, next) => {
         const accessToken = generateAccessToken(savedUser._id);
         res.send({user: savedUser, accessToken});
     } catch(e){
-        console.log(e);
         next(e);
     }
 };

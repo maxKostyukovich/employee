@@ -11,8 +11,9 @@ router.get('/user', authMiddleware, userController.getUser);
 router.post('/user', validationMiddleware.userValidation, hashPasswordMiddleware, userController.createUser);
 router.post('/login',validationMiddleware.userLoginValidation, userController.loginUser);
 
-router.post('/employee', employeeController.createEmployee);
-router.get('/employees', employeeController.getAllEmployees);
-router.delete('/employee/:id', employeeController.deleteEmployee);
+router.post('/employee', authMiddleware, validationMiddleware.employeeCreateValidation, employeeController.createEmployee);
+router.get('/employees', authMiddleware, employeeController.getAllEmployees);
+router.delete('/employee/:id', authMiddleware, employeeController.deleteEmployee);
+router.put('/employee/:id', authMiddleware, employeeController.updateEmployee);
 
 module.exports = router;
