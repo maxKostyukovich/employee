@@ -44,7 +44,7 @@ saveHandler = (data) => {
                                            component={RadioButton} type='radio' value={GENDER.FEMALE} title="Female"/>
                                 </div>
                                 <Field name={"dateOfBirth"} type={"text"}
-                                       validate={[validate.isRequireValidation]} label={"Date of birth: "}
+                                       validate={[validate.isRequireValidation, validate.dateValidation]} label={"Date of birth: "}
                                        component={Input} {...dateMask} placeholder={'YYYY-MM-DD'}
                                 />
                                 <Field name={"contactInformation"} type={"text"}
