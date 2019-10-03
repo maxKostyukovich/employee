@@ -1,6 +1,7 @@
 import { put, select } from 'redux-saga/effects';
 import ACTION from '../actions/actionTypes';
 import { getEmployees, deleteEmployeeById, createEmployee } from '../api/rest/employeeController'
+import _ from 'lodash'
 import momemt from 'moment'
 
 export function* getAllEmployeeSaga() {
@@ -41,9 +42,8 @@ export function* addNewEmployeeSaga({ employee }) {
         }else{
             const newEmployee = yield createEmployee(employee);
             const state = yield select();
-            const filteredEmployees = state.employeeReducer.employees;
+            const filteredEmployees = _.cloneDeep(state.employeeReducer.employees);
             filteredEmployees.push(newEmployee.data);
-            console.log(filteredEmployees);
             yield put({type:ACTION.MODAL_FORM_CHANGE_STATUS_ACTION, isActive: false, status: ''});
             yield put({type:ACTION.GET_ALL_EMPLOYEES_RESPONSE, employees: filteredEmployees});
         }
